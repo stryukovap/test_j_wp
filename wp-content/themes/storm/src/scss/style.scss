@@ -3,3 +3,411 @@
 	Author: Andrey Stryukov
 */
 @import "_normalize.scss";
+@import "bootstrap-grid.min.css";
+@import "fonts.css";
+
+/* colors */
+$main-color: #ffdd00;
+$second-color: #db302c;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.custom-logo {
+  margin-top: 4px;
+}
+
+.header {
+  &__wrapper-top {
+    background-color: #000000;
+  }
+
+  &__top {
+    min-height: 52px;
+
+    & a {
+      font-family: Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    &-link {
+      color: $main-color;
+      position: relative;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:after {
+        content: ">";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: -15px;
+      }
+    }
+
+    &-menu {
+      &-list {
+        @include list;
+
+        & .current_page_item a {
+          color: $main-color;
+        }
+
+        & a {
+          color: #ffffff;
+          margin: 0 15px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          &:hover {
+            color: $main-color;
+          }
+        }
+      }
+    }
+  }
+
+  &__menu {
+    &-wrapper {
+      background-size: cover;
+      min-height: 590px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &-wrap {
+      min-height: 80px;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    &-list {
+      @include list;
+
+      & .current_page_item a {
+        color: $main-color;
+      }
+
+      & a {
+        font-family: Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        color: #ffffff;
+        margin: 0 25px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
+  }
+
+  &__desc {
+    background-color: rgba(0, 0, 0, 0.71);
+    margin-top: 94px;
+    padding: 26px;
+
+    &-text {
+      margin-left: 10px;
+      color: #ffffff;
+      font-family: EurostileLTStd-Demi, sans-serif;
+      font-size: 34px;
+      font-weight: 400;
+
+      &--inv {
+        color: $main-color;
+      }
+    }
+
+    &-link {
+      display: inline-block;
+      color: #000000;
+      font-family: Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      background-color: $main-color;
+      padding: 19px 43px 20px 25px;
+      margin-top: 50px;
+      text-decoration: none;
+
+      &:hover {
+        color: #fff;
+        background-color: $second-color;
+      }
+    }
+  }
+
+  &__form {
+    background-color: $main-color;
+    padding: 30px 0 30px;
+    color: #000000;
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 65px;
+      background: url("assets/img/map-marker.png") left center no-repeat;
+    }
+
+    &-title {
+      font-family: EurostileLTStd-Demi, sans-serif;
+      font-size: 38px;
+      font-weight: 400;
+    }
+
+    &-desc {
+      font-family: Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    &-search {
+      padding-right: 25px;
+    }
+
+    &-form {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-left: 20px;
+    }
+
+    &-input {
+      border: 1px solid #b7b7b7;
+      background-color: #ffffff;
+      text-indent: 10px;
+      color: #000;
+      font-family: Helvetica, sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 20px 40px 17px 17px;
+      margin-right: 10px;
+
+      &::placeholder {
+        color: #bababa;
+        font-family: Helvetica, sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+
+    &-submit {
+      border: none;
+      background-color: $second-color;
+      color: #ffffff;
+      font-family: Helvetica, sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 19px 38px 22px 38px;
+    }
+  }
+}
+
+.block {
+  text-align: center;
+
+  &__title {
+    color: $second-color;
+    font-family: EurostileLTStd-Demi, sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+  }
+
+  &__desc {
+    color: #000000;
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23px
+  }
+}
+
+.services {
+  border-bottom: 1px solid #d4d4d4;
+  margin-top: 30px;
+  &__list {
+    @include list;
+  }
+
+  &__link {
+    color: #000000;
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 23px 54px 27px 54px;
+    background-color: $main-color;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 40px;
+    margin-bottom: 30px;
+
+    &:hover {
+      color: #fff;
+      background-color: $second-color;
+    }
+  }
+}
+
+.item {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__circle {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background-color: $second-color;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  &__title {
+    color: #000000;
+    font-family: EurostileLTStd-Demi, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  &__desc {
+    color: #000000;
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23px;
+  }
+}
+
+.started {
+  margin: 40px 0;
+  &__list {
+    @include list;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    &-wrapper {
+      & img {
+        max-width: 100%;
+        display: block;
+      }
+    }
+    &-link{
+      color: #000000;
+      font-family: EurostileLTStd-Demi, sans-serif;
+      font-size: 20px;
+      font-weight: 400;
+      background-color: $main-color;
+      display: block;
+      text-decoration: none;
+      text-align: left;
+      padding: 10px 18px;
+      &:hover{
+        color: #fff;
+        background-color: $second-color;
+      }
+    }
+  }
+}
+
+.testimonials{
+  background-color: #f7f8f8;
+  padding: 50px 0;
+  &__title{
+    margin-bottom: 40px;
+  }
+  &__slider{
+    @include list;
+  }
+}
+.slider{
+  &__testimonial{
+    text-align: left;
+    color: #000000;
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+    font-style: italic;
+    padding: 20px;
+    background-color: #fff;
+  }
+  &__author{
+    color: #000000;
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    font-style: italic;
+    float: right;
+    margin-top: 10px;
+    padding-right: 3px;
+  }
+}
+
+.footer{
+  background-color: #000;
+  &__wrapper{
+    min-height: 55px;
+  }
+  & a{
+    color: #f7f8f8;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 34px;
+  }
+  &__copy{
+    color: #f7f8f8;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 34px;
+  }
+  &__menu-list{
+    @include list;
+    & li{
+      margin: 0 5px;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+}
