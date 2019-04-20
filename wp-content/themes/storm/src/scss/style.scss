@@ -244,6 +244,7 @@ $second-color: #db302c;
 .services {
   border-bottom: 1px solid #d4d4d4;
   margin-top: 30px;
+
   &__list {
     @include list;
   }
@@ -316,6 +317,7 @@ $second-color: #db302c;
 
 .started {
   margin: 40px 0;
+
   &__list {
     @include list;
   }
@@ -323,13 +325,15 @@ $second-color: #db302c;
   &__item {
     display: flex;
     flex-direction: column;
+
     &-wrapper {
       & img {
         max-width: 100%;
         display: block;
       }
     }
-    &-link{
+
+    &-link {
       color: #000000;
       font-family: EurostileLTStd-Demi, sans-serif;
       font-size: 20px;
@@ -339,7 +343,8 @@ $second-color: #db302c;
       text-decoration: none;
       text-align: left;
       padding: 10px 18px;
-      &:hover{
+
+      &:hover {
         color: #fff;
         background-color: $second-color;
       }
@@ -347,18 +352,21 @@ $second-color: #db302c;
   }
 }
 
-.testimonials{
+.testimonials {
   background-color: #f7f8f8;
   padding: 50px 0;
-  &__title{
+
+  &__title {
     margin-bottom: 40px;
   }
-  &__slider{
+
+  &__slider {
     @include list;
   }
 }
-.slider{
-  &__testimonial{
+
+.slider {
+  &__testimonial {
     text-align: left;
     color: #000000;
     font-family: Helvetica, sans-serif;
@@ -369,7 +377,8 @@ $second-color: #db302c;
     padding: 20px;
     background-color: #fff;
   }
-  &__author{
+
+  &__author {
     color: #000000;
     font-family: Helvetica, sans-serif;
     font-size: 14px;
@@ -379,33 +388,176 @@ $second-color: #db302c;
     float: right;
     margin-top: 10px;
     padding-right: 3px;
+    text-align: right;
+  }
+
+  & .slick-arrow {
+    display: none !important;
+  }
+
+  & .slick-dots {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & li {
+      position: relative;
+      margin: 0 7px;
+      font-size: 0;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        border: 1px solid #d7d7d7;
+        background-color: #ffffff;
+        cursor: pointer;
+      }
+
+      &.slick-active {
+        &:before {
+          background-color: #000000;
+        }
+      }
+    }
   }
 }
 
-.footer{
+.news {
+  margin-top: 40px;
+
+  &__list {
+    @include list;
+  }
+
+  &__item-wrapper {
+    border: 1px solid #e1e1e1;
+  }
+
+  &__wrapper {
+    position: relative;
+
+    & img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__date {
+    width: 61px;
+    height: 61px;
+    background-color: #ffdd00;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #000000;
+  }
+
+  &__month {
+    font-family: EurostileLT, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.44px;
+  }
+
+  &__day, &__title {
+    font-family: EurostileLTStd-Demi, sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+  }
+
+  &__content {
+    text-align: left;
+    padding: 0 15px;
+  }
+
+  &__text {
+    color: #000000;
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px
+  }
+
+  &__more {
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #db302c;
+  }
+
+  &__author {
+    color: #000000;
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-top: 1px solid #e1e1e1;
+    text-align: left;
+    padding: 0 15px;
+  }
+
+  &__link {
+    color: #000000;
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 23px 54px 27px 54px;
+    background-color: $main-color;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 40px;
+    margin-bottom: 30px;
+
+    &:hover {
+      color: #fff;
+      background-color: $second-color;
+    }
+  }
+}
+
+.footer {
   background-color: #000;
-  &__wrapper{
+
+  &__wrapper {
     min-height: 55px;
   }
-  & a{
+
+  & a {
     color: #f7f8f8;
     font-family: Helvetica, sans-serif;
     font-size: 12px;
     font-weight: 400;
     line-height: 34px;
   }
-  &__copy{
+
+  &__copy {
     color: #f7f8f8;
     font-family: Helvetica, sans-serif;
     font-size: 12px;
     font-weight: 400;
     line-height: 34px;
   }
-  &__menu-list{
+
+  &__menu-list {
     @include list;
-    & li{
+
+    & li {
       margin: 0 5px;
-      &:last-child{
+
+      &:last-child {
         margin-right: 0;
       }
     }
