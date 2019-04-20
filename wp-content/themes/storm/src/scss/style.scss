@@ -400,6 +400,7 @@ $second-color: #db302c;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 20px;
 
     & li {
       position: relative;
@@ -487,7 +488,11 @@ $second-color: #db302c;
     font-family: Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 400;
-    line-height: 24px
+    line-height: 24px;
+
+    & p {
+      display: inline;
+    }
   }
 
   &__more {
@@ -524,6 +529,45 @@ $second-color: #db302c;
     &:hover {
       color: #fff;
       background-color: $second-color;
+    }
+  }
+}
+
+.contacts {
+  min-height: 637px;
+  background-color: #db302c;
+
+  &__form {
+    &-title {
+      color: #ffffff;
+      font-family: EurostileLTStd-Demi, sans-serif;
+      font-size: 32px;
+      font-weight: 400;
+    }
+
+    &-desc {
+      color: #ffffff;
+      font-family: Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  }
+
+  &__projects {
+    &-title {
+      color: #ffffff;
+      font-family: EurostileLTStd-Demi, sans-serif;
+      font-size: 32px;
+      font-weight: 400;
+    }
+
+    &-desc {
+      color: #ffffff;
+      font-family: Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
     }
   }
 }

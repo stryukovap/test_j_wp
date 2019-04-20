@@ -159,101 +159,66 @@
                                 <div class="news__content">
                                     <h3 class="news__title"><?php the_title() ?></h3>
                                     <div class="news__text"><?php the_content(); ?>
-                                        <a href="<?php the_permalink() ?>" class="news__more">Read More</a>
+                                        <a href="<?php the_permalink() ?>"
+                                           class="news__more">Read More</a>
                                     </div>
                                 </div>
-                                <div class="news__author"><?php the_author() ?></div>
+                                <div class="news__author">BY <?php the_author() ?></div>
                             </div>
                         </li>
 						<?php
 					}
 					wp_reset_postdata(); ?>
-                    <li class="news__item col-sm-12 col-md-4">
-                        <div class="news__item-wrapper">
-                            <div class="news__wrapper">
-                                <img style="display: block; width: 100%;"
-                                     src="<?php echo get_template_directory_uri() . '/assets/img/news.png' ?>"
-                                     alt="#" class="news__img">
-                                <div class="news__date">
-                                    <span class="news__month">OCT</span>
-                                    <span class="news__day">19</span>
-                                </div>
-                            </div>
-                            <div class="news__content">
-                                <h3 class="news__title">How to Prep
-                                    Your Home for Fall</h3>
-                                <div class="news__text">
-                                    Well, summer has long since passed and we’re officially in
-                                    fall. It’s the perfect time to refresh your home and give
-                                    it a good once over in advance of autumn winds and wintry
-                                    weather. As the seasons change, so do the needs of our homes,
-                                    as well as the activities we do in and around them. It’s a
-                                    good time to perform any necessary or desired maintenance
-                                    in order to keep your home running smoothly.
-                                    <a href="#" class="news__more">Read More</a>
-                                </div>
-                            </div>
-                            <div class="news__author">By Author</div>
-                        </div>
-                    </li>
-                    <li class="news__item col-sm-12 col-md-4">
-                        <div class="news__item-wrapper">
-                            <div class="news__wrapper">
-                                <img style="display: block; width: 100%;"
-                                     src="<?php echo get_template_directory_uri() . '/assets/img/news.png' ?>"
-                                     alt="#" class="news__img">
-                                <div class="news__date">
-                                    <span class="news__month">OCT</span>
-                                    <span class="news__day">19</span>
-                                </div>
-                            </div>
-                            <div class="news__content">
-                                <h3 class="news__title">How to Prep
-                                    Your Home for Fall</h3>
-                                <div class="news__text">
-                                    Well, summer has long since passed and we’re officially in
-                                    fall. It’s the perfect time to refresh your home and give
-                                    it a good once over in advance of autumn winds and wintry
-                                    weather. As the seasons change, so do the needs of our homes,
-                                    as well as the activities we do in and around them. It’s a
-                                    good time to perform any necessary or desired maintenance
-                                    in order to keep your home running smoothly.
-                                    <a href="#" class="news__more">Read More</a>
-                                </div>
-                            </div>
-                            <div class="news__author">By Author</div>
-                        </div>
-                    </li>
-                    <li class="news__item col-sm-12 col-md-4">
-                        <div class="news__item-wrapper">
-                            <div class="news__wrapper">
-                                <img style="display: block; width: 100%;"
-                                     src="<?php echo get_template_directory_uri() . '/assets/img/news.png' ?>"
-                                     alt="#" class="news__img">
-                                <div class="news__date">
-                                    <span class="news__month">OCT</span>
-                                    <span class="news__day">19</span>
-                                </div>
-                            </div>
-                            <div class="news__content">
-                                <h3 class="news__title">How to Prep
-                                    Your Home for Fall</h3>
-                                <div class="news__text">
-                                    Well, summer has long since passed and we’re officially in
-                                    fall. It’s the perfect time to refresh your home and give
-                                    it a good once over in advance of autumn winds and wintry
-                                    weather. As the seasons change, so do the needs of our homes,
-                                    as well as the activities we do in and around them. It’s a
-                                    good time to perform any necessary or desired maintenance
-                                    in order to keep your home running smoothly.
-                                    <a href="#" class="news__more">Read More</a>
-                                </div>
-                            </div>
-                            <div class="news__author">By Author</div>
-                        </div>
-                    </li>
                 </ul>
                 <a href="#" class="news__link">View More News</a>
+            </div>
+        </section>
+        <section class="contacts">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-xs-12 contacts__form">
+                        <h2 class="contacts__form-title">Contact Us Today</h2>
+                        <div class="contacts__form-desc">
+                            Need more information about our services or insurance claims?
+                            Fill out the form below and representitive will be in touch!
+                        </div>
+						<?php echo do_shortcode( '[contact-form-7 id="108" title="Contact Form for Main Page"]' ); ?>
+                    </div>
+                    <div class="col-md-6 col-xs-12 contacts__projects">
+                        <h2 class="contacts__projects-title">Check Out Our Past Projects</h2>
+                        <div class="contacts__projects-desc">
+                            Want to see examples of our past work? Check out the gallery
+                            below to see projects we have completed in the past.
+                        </div>
+                        <ul class="contacts__projects-list row">
+                            <li class="contacts__projects-item col-sm-12 col-md-3">
+                                <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>" alt="#">
+                            </li>
+                            <li class="contacts__projects-item col-sm-12 col-md-3">
+                                <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>" alt="#">
+                            </li>
+                            <li class="contacts__projects-item col-sm-12 col-md-3">
+                                <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>" alt="#">
+                            </li>
+                            <li class="contacts__projects-item col-sm-12 col-md-3">
+                                <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>" alt="#">
+                            </li>
+                            <li class="contacts__projects-item col-sm-12 col-md-3">
+                                <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>" alt="#">
+                            </li>
+                            <li class="contacts__projects-item col-sm-12 col-md-3">
+                                <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>" alt="#">
+                            </li>
+                            <li class="contacts__projects-item col-sm-12 col-md-3">
+                                <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>" alt="#">
+                            </li>
+                            <li class="contacts__projects-item col-sm-12 col-md-3">
+                                <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>" alt="#">
+                            </li>
+                        </ul>
+                        <a href="#" class="contacts__projects-link">View More Photos</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main><!-- #main -->
