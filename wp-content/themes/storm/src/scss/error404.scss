@@ -1,0 +1,58 @@
+.error-404{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px 0;
+  & p{
+    margin: 15px 0;
+  }
+  & .searchform{
+    margin: 20px 0;
+  }
+  & .screen-reader-text{
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    padding:0 !important;
+    border:0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+  }
+  & input {
+    border: 1px solid #b7b7b7;
+    background-color: #ffffff;
+    text-indent: 10px;
+    color: #000;
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 20px 40px 17px 17px;
+    margin-right: 10px;
+    &[type=submit]{
+      border: none;
+      background-color: #ffdd00;
+      border: 1px solid #ffdd00;
+      color: #000;
+      &:hover{
+        color: #fff;
+        background-color: #db302c;
+        border: 1px solid #db302c;
+        cursor: pointer;
+      }
+    }
+    @media (max-width: 960px){
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+  &__link{
+    color: #000;
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+    &:hover{
+      color: #db302c;
+    }
+  }
+}

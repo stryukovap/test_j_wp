@@ -5,10 +5,26 @@
 @import "_normalize.scss";
 @import "bootstrap-grid.min.css";
 @import "fonts.css";
+@import "post.scss";
+@import "error404.scss";
 
 /* colors */
 $main-color: #ffdd00;
 $second-color: #db302c;
+
+body {
+  color: #000000;
+  background-color: #ffffff;
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+h1, h2 {
+  color: #dc3430;
+  font-family: EurostileLTStd-Demi, sans-serif;
+  font-weight: 400;
+}
 
 * {
   margin: 0;
@@ -77,21 +93,20 @@ $second-color: #db302c;
             color: $main-color;
           }
         }
+
+        @media(max-width: 960px) {
+          display: none;
+        }
       }
     }
   }
 
   &__menu {
     &-wrapper {
-      background-size: cover;
-      min-height: 590px;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-
-    &-wrap {
-      min-height: 80px;
+      height: 80px;
       background-color: rgba(0, 0, 0, 0.6);
+      position: relative;
+      z-index: 5;
     }
 
     &-list {
@@ -117,12 +132,69 @@ $second-color: #db302c;
           color: $main-color;
         }
       }
+
+      @media(max-width: 960px) {
+        display: none;
+      }
+    }
+
+    &-mobile {
+      display: none;
+      @include list;
+      position: absolute;
+      top: 50px;
+      right: 15px;
+
+      & .menu-item {
+        width: 80vw;
+      }
+
+      & a {
+        font-family: Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        color: #fff;
+        padding: 15px 20px;
+        display: block;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      &.visible {
+        display: block;
+        background-color: #000;
+        color: #fff;
+        @media(min-width: 960px) {
+          display: none;
+        }
+      }
+
+      &-img {
+      }
+
+      &-wrapper {
+        position: relative;
+        padding: 15px;
+      }
     }
   }
+}
+
+.promo {
+  margin-top: -80px;
+  background-size: cover;
+  min-height: 590px;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: calc(94px + 80px);
+  position: relative;
+  z-index: 3;
 
   &__desc {
     background-color: rgba(0, 0, 0, 0.71);
-    margin-top: 94px;
     padding: 26px;
 
     &-text {
@@ -154,7 +226,9 @@ $second-color: #db302c;
       }
     }
   }
+}
 
+.find {
   &__form {
     background-color: $main-color;
     padding: 30px 0 30px;
@@ -218,6 +292,12 @@ $second-color: #db302c;
       font-size: 18px;
       font-weight: 700;
       padding: 19px 38px 22px 38px;
+
+      &:hover {
+        color: #000;
+        background-color: #fff;
+        cursor: pointer;
+      }
     }
   }
 }
@@ -237,13 +317,17 @@ $second-color: #db302c;
     font-family: Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 400;
-    line-height: 23px
+    line-height: 23px;
+    margin-top: 10px;
   }
 }
 
 .services {
-  border-bottom: 1px solid #d4d4d4;
   margin-top: 30px;
+
+  & .container {
+    border-bottom: 1px solid #d4d4d4;
+  }
 
   &__list {
     @include list;
@@ -266,53 +350,58 @@ $second-color: #db302c;
       background-color: $second-color;
     }
   }
-}
 
-.item {
-  margin-top: 48px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  &__link {
-    text-decoration: none;
+  &__item {
+    margin-top: 48px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  &__wrapper {
-    position: relative;
+  & .item {
+    &__link {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__wrapper {
+      position: relative;
+    }
+
+    &__circle {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      background-color: $second-color;
+    }
+
+    &__icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+    &__title {
+      color: #000000;
+      font-family: EurostileLTStd-Demi, sans-serif;
+      font-size: 20px;
+      font-weight: 400;
+      margin-top: 10px;
+    }
+
+    &__desc {
+      color: #000000;
+      font-family: Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 23px;
+      margin-top: 10px;
+    }
   }
 
-  &__circle {
-    width: 84px;
-    height: 84px;
-    border-radius: 50%;
-    background-color: $second-color;
-  }
-
-  &__icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-  }
-
-  &__title {
-    color: #000000;
-    font-family: EurostileLTStd-Demi, sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-  }
-
-  &__desc {
-    color: #000000;
-    font-family: Helvetica, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 23px;
-  }
 }
 
 .started {
@@ -325,6 +414,7 @@ $second-color: #db302c;
   &__item {
     display: flex;
     flex-direction: column;
+    margin-top: 25px;
 
     &-wrapper {
       & img {
@@ -437,8 +527,12 @@ $second-color: #db302c;
     @include list;
   }
 
-  &__item-wrapper {
-    border: 1px solid #e1e1e1;
+  &__item {
+    margin-top: 30px;
+
+    &-wrapper {
+      border: 1px solid #e1e1e1;
+    }
   }
 
   &__wrapper {
@@ -478,6 +572,10 @@ $second-color: #db302c;
     font-weight: 400;
   }
 
+  &__title {
+    margin: 10px 0 0;
+  }
+
   &__content {
     text-align: left;
     padding: 0 15px;
@@ -489,6 +587,7 @@ $second-color: #db302c;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
+    padding: 10px 0;
 
     & p {
       display: inline;
@@ -511,7 +610,7 @@ $second-color: #db302c;
     text-transform: uppercase;
     border-top: 1px solid #e1e1e1;
     text-align: left;
-    padding: 0 15px;
+    padding: 10px;
   }
 
   &__link {
@@ -534,10 +633,69 @@ $second-color: #db302c;
 }
 
 .contacts {
-  min-height: 637px;
   background-color: #db302c;
+  padding-top: 35px;
+  padding-bottom: 35px;
+
+  &__link {
+    color: $second-color;
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 23px 54px 27px 54px;
+    background-color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+
+    &:hover {
+      color: #000;
+      background-color: $main-color;
+    }
+  }
 
   &__form {
+    & input:not([type=submit]), & select, & textarea {
+      width: 100%;
+      margin-bottom: 24px;
+      padding: 10px;
+      font-family: Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #000;
+
+      &::placeholder {
+        color: #ababab;
+        font-family: Helvetica, sans-serif;
+        font-style: italic;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+      }
+    }
+
+    & textarea {
+      height: 168px;
+      resize: none;
+    }
+
+    & input[type=submit] {
+      float: right;
+      border: none;
+      background-color: #ffffff;
+      color: #db302c;
+      font-family: Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 25px 34px;
+
+      &:hover {
+        color: #000;
+        background-color: $main-color;
+      }
+    }
+
     &-title {
       color: #ffffff;
       font-family: EurostileLTStd-Demi, sans-serif;
@@ -551,6 +709,11 @@ $second-color: #db302c;
       font-size: 16px;
       font-weight: 400;
       line-height: 24px;
+      margin: 24px 0 30px;
+
+      &--post {
+        margin: 20px 0 0;
+      }
     }
   }
 
@@ -568,6 +731,58 @@ $second-color: #db302c;
       font-size: 16px;
       font-weight: 400;
       line-height: 24px;
+      margin: 14px 0 30px;
+
+      &--post {
+        margin: 20px 0 0;
+      }
+    }
+
+    &-list {
+      @include list;
+    }
+
+    &-item {
+      padding: 10px 10px;
+
+      & img {
+        width: 100%;
+        display: block;
+      }
+    }
+
+    &-wrapper {
+      text-align: center;
+    }
+
+    &-link {
+      color: $second-color;
+      font-family: Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 23px 54px 27px 54px;
+      background-color: #fff;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+      margin-bottom: 30px;
+
+      &:hover {
+        color: #000;
+        background-color: $main-color;
+      }
+    }
+
+    &-portfolio {
+      color: #ffffff;
+      font-family: Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 700;
+
+      &:hover {
+        color: $main-color;
+      }
     }
   }
 }
