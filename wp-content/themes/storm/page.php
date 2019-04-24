@@ -11,6 +11,13 @@ Template Name: Page
 <section id="primary" class="content-area">
     <main id="main" class="site-main">
         <div class="container">
+            <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+		        <?php
+		        if(function_exists('bcn_display'))
+		        {
+			        bcn_display();
+		        }?>
+            </div>
 			<?php the_post(); ?>
             <article class="page-full">
                 <h1><?php the_title() ?></h1>

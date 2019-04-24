@@ -1,6 +1,6 @@
 /* posts */
 
-.banner{
+.banner {
   min-height: 264px;
   margin-top: -80px;
   position: relative;
@@ -9,8 +9,9 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-.archive{
-  & h1{
+
+.archive {
+  & h1 {
     color: #dc3430;
     font-family: EurostileLTStd-Demi, sans-serif;
     font-size: 34px;
@@ -18,24 +19,35 @@
     margin-top: 20px;
   }
 }
-.content{
+
+.content {
   padding-top: 30px;
   padding-bottom: 30px;
   border-bottom: 1px solid #d4d4d4;
-  &__title{
+
+  &__image {
+    & img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__title {
     color: #dc3430;
     font-family: EurostileLTStd-Demi, sans-serif;
     font-size: 34px;
     font-weight: 400;
     margin-top: 0;
   }
-  &__text{
+
+  &__text {
     color: #000000;
     font-family: Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 23px;
-    & p{
+
+    & p {
       margin-top: 15px;
     }
   }
@@ -43,21 +55,24 @@
 
 .pagination {
   margin: 15px 0;
+
   & h2 {
     position: absolute !important;
     clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
     clip: rect(1px, 1px, 1px, 1px);
-    padding:0 !important;
-    border:0 !important;
+    padding: 0 !important;
+    border: 0 !important;
     height: 1px !important;
     width: 1px !important;
     overflow: hidden;
   }
-  & .nav-links{
+
+  & .nav-links {
     display: flex;
     align-items: center;
     justify-content: center;
-    & span, a{
+
+    & span, a {
       margin: 0 5px;
       color: #000000;
       font-family: Helvetica, sans-serif;
@@ -65,7 +80,8 @@
       font-weight: 400;
       line-height: 23px;
     }
-    & a:hover{
+
+    & a:hover {
       color: #db302c;
     }
   }

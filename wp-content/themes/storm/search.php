@@ -5,6 +5,13 @@
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main">
 			<div class="container">
+                <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+					<?php
+					if(function_exists('bcn_display'))
+					{
+						bcn_display();
+					}?>
+                </div>
 				<header class="page-header">
 					<h1 class="page-title">Search results for:</h1>
 					<div class="page-description"><?php echo get_search_query(); ?></div>

@@ -5,7 +5,14 @@
     <section id="primary" class="content-area">
         <main id="main" class="site-main">
             <div class="container">
-                <h1><?php the_title() ?></h1>
+                <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+		            <?php
+		            if(function_exists('bcn_display'))
+		            {
+			            bcn_display();
+		            }?>
+                </div>
+                <h1><?php single_post_title(); ?></h1>
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 					<?php if ( has_post_thumbnail() ) : ?>
                         <div class="thumbnail">

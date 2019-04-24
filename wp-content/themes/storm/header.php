@@ -40,7 +40,7 @@
 					wp_nav_menu( [
 						'theme_location' => 'header',
 						'container'      => '',
-						'items_wrap'     => '<ul class="header__menu-list row align-items-center justify-content-end">%3$s</ul>'
+						'items_wrap'     => '<ul class="header__menu-list row flex-row align-items-center justify-content-end">%3$s</ul>'
 					] );
 					?>
                 </nav>

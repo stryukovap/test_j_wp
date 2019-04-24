@@ -82,7 +82,7 @@ h1, h2 {
         }
 
         & .current_page_item a {
-          color: $main-color;
+          color: $second-color;
         }
 
         & a {
@@ -94,7 +94,7 @@ h1, h2 {
           }
 
           &:hover {
-            color: $main-color;
+            color: $second-color;
           }
         }
 
@@ -126,7 +126,7 @@ h1, h2 {
 
   &__menu {
     &-wrapper {
-      height: 80px;
+      min-height: 80px;
       background-color: rgba(0, 0, 0, 0.6);
       position: relative;
       z-index: 5;
@@ -140,7 +140,7 @@ h1, h2 {
       }
 
       & .current_page_item a {
-        color: $main-color;
+        color: $second-color;
       }
 
       & a {
@@ -156,7 +156,7 @@ h1, h2 {
         }
 
         &:hover {
-          color: $main-color;
+          color: $second-color;
         }
       }
 
@@ -217,21 +217,33 @@ h1, h2 {
       }
 
       &-img {
+        @media(min-width: 960px) {
+          display: none;
+        }
       }
 
       &-wrapper {
         position: relative;
         padding: 15px;
-        @media(min-width: 960px) {
-          display: none;
-        }
       }
-      & .sub-menu{
+
+      & .sub-menu {
         @include list;
-        & a{
+
+        & a {
           padding-left: 10%;
         }
       }
+
+      @media(min-width: 960px) {
+        display: none;
+      }
+    }
+  }
+
+  &__mobile-navigation {
+    @media(min-width: 960px) {
+      display: none;
     }
   }
 }
@@ -281,6 +293,35 @@ h1, h2 {
   }
 }
 
+.breadcrumbs {
+  margin: 20px 0;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.64;
+  letter-spacing: normal;
+  text-align: left;
+
+  & a {
+    padding: 0 5px;
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.64;
+    letter-spacing: normal;
+    text-align: left;
+    color: #db302c;
+  }
+
+  .current-item {
+    color: #000;
+  }
+}
+
 .find {
   &__form {
     background-color: $main-color;
@@ -293,6 +334,10 @@ h1, h2 {
       align-items: flex-start;
       padding-left: 65px;
       background: url("assets/img/map-marker.png") left center no-repeat;
+      @media(max-width: 960px){
+        background:none;
+        padding: 0 15px;
+      }
     }
 
     &-title {
@@ -309,6 +354,10 @@ h1, h2 {
 
     &-search {
       padding-right: 25px;
+      @media(max-width: 960px){
+        padding: 0 15px;
+        width: 100%;
+      }
     }
 
     &-form {
@@ -316,6 +365,10 @@ h1, h2 {
       align-items: center;
       justify-content: flex-start;
       margin-left: 20px;
+      @media(max-width: 960px){
+        flex-direction: column;
+        margin-left: 0;
+      }
     }
 
     &-input {
@@ -328,6 +381,11 @@ h1, h2 {
       font-weight: 700;
       padding: 20px 40px 17px 17px;
       margin-right: 10px;
+      @media(max-width: 960px){
+        margin-right: 0;
+        width: 100%;
+        margin-top: 10px;
+      }
 
       &::placeholder {
         color: #bababa;
@@ -345,6 +403,10 @@ h1, h2 {
       font-size: 18px;
       font-weight: 700;
       padding: 19px 38px 22px 38px;
+      @media(max-width: 960px){
+        width: 100%;
+        margin-top: 10px;
+      }
 
       &:hover {
         color: #000;

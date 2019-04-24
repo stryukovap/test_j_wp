@@ -7,6 +7,13 @@ get_header();
     <section id="primary" class="content-area">
         <main id="main" class="site-main">
             <div class="container">
+                <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+		            <?php
+		            if(function_exists('bcn_display'))
+		            {
+			            bcn_display();
+		            }?>
+                </div>
                 <div class="error-404">
                     <h1 class="error-404__title">Oops! That page can&rsquo;t be found.</h1>
                     <div class="error-404__content">

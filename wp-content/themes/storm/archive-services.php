@@ -7,6 +7,13 @@ get_header();
                      style="background-image: url(<?php echo get_template_directory_uri() . '/assets/img/bigstock-Two-Story-House-With-Wooden-Wa-143111315.jpg'?>)">
             </section>
             <div class="container">
+                <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+		            <?php
+		            if(function_exists('bcn_display'))
+		            {
+			            bcn_display();
+		            }?>
+                </div>
 	            <?php
 	            the_archive_title( '<h1 class="page-title">', '</h1>' );
 	            ?>
