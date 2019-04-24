@@ -77,6 +77,10 @@ h1, h2 {
       &-list {
         @include list;
 
+        & li {
+          position: relative;
+        }
+
         & .current_page_item a {
           color: $main-color;
         }
@@ -92,6 +96,25 @@ h1, h2 {
           &:hover {
             color: $main-color;
           }
+        }
+
+        & .sub-menu {
+          left: -9999px;
+          background: #000;
+          padding: 15px;
+          min-width: 200px;
+          position: absolute;
+          top: 100%;
+          z-index: 9999;
+
+          & a {
+            margin: 10px 0;
+            display: block;
+          }
+        }
+
+        & .menu-item:hover .sub-menu {
+          left: 0;
         }
 
         @media(max-width: 960px) {
@@ -112,6 +135,10 @@ h1, h2 {
     &-list {
       @include list;
 
+      & li {
+        position: relative;
+      }
+
       & .current_page_item a {
         color: $main-color;
       }
@@ -131,6 +158,26 @@ h1, h2 {
         &:hover {
           color: $main-color;
         }
+      }
+
+      & .sub-menu {
+        @include list;
+        left: -9999px;
+        background: #000;
+        padding: 15px;
+        min-width: 200px;
+        position: absolute;
+        top: 100%;
+        z-index: 9999;
+
+        & a {
+          margin: 10px 0;
+          display: block;
+        }
+      }
+
+      & .menu-item:hover .sub-menu {
+        left: 0;
       }
 
       @media(max-width: 960px) {
@@ -155,7 +202,7 @@ h1, h2 {
         font-weight: 700;
         text-decoration: none;
         color: #fff;
-        padding: 15px 20px;
+        padding: 10px 10px;
         display: block;
 
         &:last-child {
@@ -167,9 +214,6 @@ h1, h2 {
         display: block;
         background-color: #000;
         color: #fff;
-        @media(min-width: 960px) {
-          display: none;
-        }
       }
 
       &-img {
@@ -178,6 +222,15 @@ h1, h2 {
       &-wrapper {
         position: relative;
         padding: 15px;
+        @media(min-width: 960px) {
+          display: none;
+        }
+      }
+      & .sub-menu{
+        @include list;
+        & a{
+          padding-left: 10%;
+        }
       }
     }
   }

@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="<?php bloginfo( 'description' ) ?>">
     <title><?php bloginfo( 'name' );
 		echo " | ";
 		bloginfo( 'description' ) ?></title>
@@ -16,13 +17,16 @@
         <div class="container">
             <div class="header__top row align-items-center justify-content-between">
                 <a href="#" class="header__top-link">Find Your Local Storm Guard!</a>
-				<?php
-				wp_nav_menu( [
-					'theme_location' => 'top',
-					'container'      => null,
-					'items_wrap'     => '<ul class="header__top-menu-list row align-items-center justify-content-end">%3$s</ul>'
-				] );
-				?>
+                <nav id="top-site-navigation" class="header__top-navigation" role="navigation"
+                     aria-label="Top Navigation">
+					<?php
+					wp_nav_menu( [
+						'theme_location' => 'top',
+						'container'      => '',
+						'items_wrap'     => '<ul class="header__top-menu-list row align-items-center justify-content-end">%3$s</ul>'
+					] );
+					?>
+                </nav>
             </div>
         </div>
     </div>
@@ -30,23 +34,28 @@
         <div class="container">
             <div class="row align-items-center justify-content-between">
 				<?php the_custom_logo() ?>
-				<?php
-				wp_nav_menu( [
-					'theme_location' => 'header',
-					'container'      => null,
-					'items_wrap'     => '<ul class="header__menu-list row align-items-center justify-content-end">%3$s</ul>'
-				] );
-				?>
-                <div class="header__menu-mobile-wrapper"><?php
+                <nav id="site-navigation" class="header__main-navigation" role="navigation"
+                     aria-label="Main Navigation">
+					<?php
+					wp_nav_menu( [
+						'theme_location' => 'header',
+						'container'      => '',
+						'items_wrap'     => '<ul class="header__menu-list row align-items-center justify-content-end">%3$s</ul>'
+					] );
+					?>
+                </nav>
+                <nav id="mobile-site-navigation" class="header__mobile-navigation" role="navigation"
+                     aria-label="Mobile Navigation">
+					<?php
 					wp_nav_menu( [
 						'theme_location' => 'mobile',
-						'container'      => null,
+						'container'      => '',
 						'items_wrap'     => '<ul class="header__menu-mobile row align-items-center justify-content-end">%3$s</ul>'
 					] );
 					?>
                     <img src="<?php echo get_template_directory_uri() . '/assets/img/bars-solid.svg' ?>" width="30"
                          alt="menu" class="header__menu-mobile-img">
-                </div>
+                </nav>
             </div>
         </div>
     </div>
