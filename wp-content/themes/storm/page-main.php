@@ -171,12 +171,15 @@ Template Name: Front page
 									}
 									?>
                                     <div class="news__date">
-                                        <span class="news__month">OCT</span>
-                                        <span class="news__day">19</span>
+                                        <span class="news__month"><?php echo get_the_date('M'); ?></span>
+                                        <span class="news__day"><?php echo get_the_date('d'); ?></span>
                                     </div>
                                 </div>
                                 <div class="news__content">
-                                    <h3 class="news__title"><?php the_title() ?></h3>
+                                    <h3 class="news__title">
+                                        <a href="<?php the_permalink() ?>">
+                                            <?php the_title() ?></a>
+                                    </h3>
                                     <div class="news__text"><?php the_content(); ?>
                                         <a href="<?php the_permalink() ?>"
                                            class="news__more">Read More</a>

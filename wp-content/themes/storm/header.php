@@ -16,8 +16,8 @@
     <div class="header__wrapper-top">
         <div class="container">
             <div class="header__top row align-items-center justify-content-between">
-                <a href="#" class="header__top-link">Find Your Local Storm Guard!</a>
-                <nav id="top-site-navigation" class="header__top-navigation" role="navigation"
+                <a href="#" class="header__top-link col-auto">Find Your Local Storm Guard!</a>
+                <nav id="top-site-navigation" class="header__top-navigation col-auto" role="navigation"
                      aria-label="Top Navigation">
 					<?php
 					wp_nav_menu( [
@@ -33,14 +33,16 @@
     <div class="header__menu-wrapper">
         <div class="container">
             <div class="row align-items-center justify-content-between">
-				<?php the_custom_logo() ?>
-                <nav id="site-navigation" class="header__main-navigation" role="navigation"
+                <div class="col-auto">
+					<?php the_custom_logo() ?>
+                </div>
+                <nav id="site-navigation" class="header__main-navigation col-auto" role="navigation"
                      aria-label="Main Navigation">
 					<?php
 					wp_nav_menu( [
 						'theme_location' => 'header',
 						'container'      => '',
-						'items_wrap'     => '<ul class="header__menu-list row flex-row align-items-center justify-content-end">%3$s</ul>'
+						'items_wrap'     => '<ul class="header__menu-list row align-items-center justify-content-end">%3$s</ul>'
 					] );
 					?>
                 </nav>

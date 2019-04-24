@@ -7,13 +7,7 @@ get_header();
                  style="background-image: url(<?php echo get_field( 'post_background' ) ?>)">
         </section>
         <div class="container">
-            <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
-		        <?php
-		        if(function_exists('bcn_display'))
-		        {
-			        bcn_display();
-		        }?>
-            </div>
+	        <?php get_template_part( 'template-parts/breadcrumbs' ) ?>
             <article class="content">
                 <div class="row">
 					<?php the_post(); ?>

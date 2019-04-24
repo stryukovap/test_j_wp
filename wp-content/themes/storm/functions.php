@@ -2,8 +2,8 @@
 
 add_action( 'wp_enqueue_scripts', 'storm_site_scripts' );
 function storm_site_scripts() {
-	wp_enqueue_style( 'site-style', get_stylesheet_uri(), array(), '_bld_1556140325483' );
-	wp_enqueue_script( 'site-script', get_template_directory_uri() . '/assets/js/build.js', array('jquery'), '_bld_1556140325483', true );
+	wp_enqueue_style( 'site-style', get_stylesheet_uri(), array(), '_bld_1556145248112' );
+	wp_enqueue_script( 'site-script', get_template_directory_uri() . '/assets/js/build.js', array('jquery'), '_bld_1556145248112', true );
 }
 
 add_action( 'after_setup_theme', 'storm_after_setup' );
