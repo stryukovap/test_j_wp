@@ -19,7 +19,7 @@ Template Name: Front page
                 </div>
             </div>
         </section>
-	    <?php get_template_part('template-parts/find_block') ?>
+		<?php get_template_part( 'template-parts/find_block' ) ?>
         <section class="services block">
             <div class="container">
                 <h2 class="services__title block__title">
@@ -171,14 +171,14 @@ Template Name: Front page
 									}
 									?>
                                     <div class="news__date">
-                                        <span class="news__month"><?php echo get_the_date('M'); ?></span>
-                                        <span class="news__day"><?php echo get_the_date('d'); ?></span>
+                                        <span class="news__month"><?php echo get_the_date( 'M' ); ?></span>
+                                        <span class="news__day"><?php echo get_the_date( 'd' ); ?></span>
                                     </div>
                                 </div>
                                 <div class="news__content">
                                     <h3 class="news__title">
                                         <a href="<?php the_permalink() ?>">
-                                            <?php the_title() ?></a>
+											<?php the_title() ?></a>
                                     </h3>
                                     <div class="news__text"><?php the_content(); ?>
                                         <a href="<?php the_permalink() ?>"
@@ -199,53 +199,21 @@ Template Name: Front page
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-xs-12 contacts__form">
-                        <h2 class="contacts__form-title">Contact Us Today</h2>
-                        <div class="contacts__form-desc">
-                            Need more information about our services or insurance claims?
-                            Fill out the form below and representitive will be in touch!
-                        </div>
+                        <h2 class="contacts__form-title"><?php echo get_field( 'left_title' ) ?></h2>
+                        <div class="contacts__form-desc"><?php echo get_field( 'left_description' ) ?></div>
 						<?php echo do_shortcode( '[contact-form-7 id="108" title="Contact Form for Main Page"]' ); ?>
                     </div>
                     <div class="col-md-6 col-xs-12 contacts__projects">
-                        <h2 class="contacts__projects-title">Check Out Our Past Projects</h2>
-                        <div class="contacts__projects-desc">
-                            Want to see examples of our past work? Check out the gallery
-                            below to see projects we have completed in the past.
+                        <h2 class="contacts__projects-title"><?php echo get_field( 'right_title' ) ?></h2>
+                        <div class="contacts__projects-desc"><?php echo get_field( 'right_description' ) ?></div>
+                        <div>
+							<?php
+							$gallery_id      = get_field( 'gallery_id' );
+							$gallery_obj     = get_post( $gallery_id );
+							$gallery_content = $gallery_obj->post_content;
+							echo $gallery_content;
+							?>
                         </div>
-                        <ul class="contacts__projects-list row">
-                            <li class="contacts__projects-item col-3">
-                                <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
-                                     alt="#">
-                            </li>
-                            <li class="contacts__projects-item col-3">
-                                <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
-                                     alt="#">
-                            </li>
-                            <li class="contacts__projects-item col-3">
-                                <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
-                                     alt="#">
-                            </li>
-                            <li class="contacts__projects-item col-3">
-                                <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
-                                     alt="#">
-                            </li>
-                            <li class="contacts__projects-item col-3">
-                                <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
-                                     alt="#">
-                            </li>
-                            <li class="contacts__projects-item col-3">
-                                <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
-                                     alt="#">
-                            </li>
-                            <li class="contacts__projects-item col-3">
-                                <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
-                                     alt="#">
-                            </li>
-                            <li class="contacts__projects-item col-3">
-                                <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
-                                     alt="#">
-                            </li>
-                        </ul>
                         <div class="contacts__projects-wrapper">
                             <a href="#" class="contacts__projects-link">View More Photos</a>
                         </div>
