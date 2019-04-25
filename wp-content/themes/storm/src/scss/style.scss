@@ -855,6 +855,7 @@ h1, h2 {
   }
 
   &__projects {
+
     &-title {
       color: #ffffff;
       font-family: EurostileLTStd-Demi, sans-serif;
@@ -885,6 +886,7 @@ h1, h2 {
       & img {
         width: 100%;
         display: block;
+        height: auto;
       }
     }
 

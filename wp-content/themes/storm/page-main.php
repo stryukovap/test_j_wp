@@ -207,15 +207,43 @@ Template Name: Front page
                         <h2 class="contacts__projects-title"><?php echo get_field( 'right_title' ) ?></h2>
                         <div class="contacts__projects-desc"><?php echo get_field( 'right_description' ) ?></div>
                         <div>
-							<?php
-							$gallery_id      = get_field( 'gallery_id' );
-							$gallery_obj     = get_post( $gallery_id );
-							$gallery_content = $gallery_obj->post_content;
-							echo $gallery_content;
-							?>
+                            <ul class="contacts__projects-list row">
+                                <li class="contacts__projects-item col-3">
+                                    <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
+                                         alt="#">
+                                </li>
+                                <li class="contacts__projects-item col-3">
+                                    <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
+                                         alt="#">
+                                </li>
+                                <li class="contacts__projects-item col-3">
+                                    <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
+                                         alt="#">
+                                </li>
+                                <li class="contacts__projects-item col-3">
+                                    <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
+                                         alt="#">
+                                </li>
+                                <li class="contacts__projects-item col-3">
+                                    <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
+                                         alt="#">
+                                </li>
+                                <li class="contacts__projects-item col-3">
+                                    <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
+                                         alt="#">
+                                </li>
+                                <li class="contacts__projects-item col-3">
+                                    <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
+                                         alt="#">
+                                </li>
+                                <li class="contacts__projects-item col-3">
+                                    <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
+                                         alt="#">
+                                </li>
+                            </ul>
                         </div>
                         <div class="contacts__projects-wrapper">
-                            <a href="#" class="contacts__projects-link">View More Photos</a>
+                            <a href="/gallery/" class="contacts__projects-link">View More Photos</a>
                         </div>
                     </div>
                 </div>
