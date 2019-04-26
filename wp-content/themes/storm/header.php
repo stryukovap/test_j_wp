@@ -3,7 +3,7 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ) ?>">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="<?php bloginfo( 'description' ) ?>">
     <title><?php bloginfo( 'name' );
@@ -17,7 +17,7 @@
         <div class="container">
             <div class="header__top row align-items-center justify-content-between">
                 <a href="#" class="header__top-link col-auto">Find Your Local Storm Guard!</a>
-                <nav id="top-site-navigation" class="header__top-navigation col-auto" role="navigation"
+                <nav id="top-site-navigation" class="header__top-navigation col-auto"
                      aria-label="Top Navigation">
 					<?php
 					wp_nav_menu( [
@@ -36,7 +36,7 @@
                 <div class="col-auto">
 					<?php the_custom_logo() ?>
                 </div>
-                <nav id="site-navigation" class="header__main-navigation col-auto" role="navigation"
+                <nav id="site-navigation" class="header__main-navigation col-auto"
                      aria-label="Main Navigation">
 					<?php
 					wp_nav_menu( [
@@ -46,7 +46,7 @@
 					] );
 					?>
                 </nav>
-                <nav id="mobile-site-navigation" class="header__mobile-navigation" role="navigation"
+                <nav id="mobile-site-navigation" class="header__mobile-navigation"
                      aria-label="Mobile Navigation">
 					<?php
 					wp_nav_menu( [
@@ -62,3 +62,4 @@
         </div>
     </div>
 </header>
+<main id="main" class="site-main">

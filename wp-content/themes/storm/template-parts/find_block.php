@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="row align-items-center justify-content-start">
 				<div class="find__form-wrapper">
-					<div class="find__form-title">Find A Franchise Near You</div>
+                    <h2 class="find__form-title">Find A Franchise Near You</h2>
 					<div class="find__form-desc">Want to speak to us in person? Enter your zip code to find the
 						nearest franchise.
 					</div>

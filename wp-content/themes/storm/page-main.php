@@ -7,8 +7,8 @@ Template Name: Front page
 <?php get_header(); ?>
 <section id="primary" class="content-area">
     <main id="main" class="site-main">
-        <section class="promo"
-                 style="background-image: url(<?php echo get_field( 'promo_background' ) ?>)">
+        <div class="promo" role="banner"
+             style="background-image: url(<?php echo get_field( 'promo_background' ) ?>)">
             <div class="container">
                 <div class="promo__desc col-sm-12 col-md-6">
                     <div class="promo__desc-text">
@@ -18,7 +18,7 @@ Template Name: Front page
                        class="promo__desc-link"><?php echo get_field( 'button_text' ) ?> ></a>
                 </div>
             </div>
-        </section>
+        </div>
 		<?php get_template_part( 'template-parts/find_block' ) ?>
         <section class="services block">
             <div class="container">
