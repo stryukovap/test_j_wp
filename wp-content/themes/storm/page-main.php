@@ -10,7 +10,7 @@ Template Name: Front page
         <div class="promo" role="banner"
              style="background-image: url(<?php echo get_field( 'promo_background' ) ?>)">
             <div class="container">
-                <div class="promo__desc col-sm-12 col-md-6">
+                <div class="promo__desc">
                     <div class="promo__desc-text">
 						<?php the_field( 'main_title' ) ?>
                     </div>
@@ -28,7 +28,7 @@ Template Name: Front page
                 <div class="services__desc block__desc">
 					<?php echo get_field( 'block2_description' ) ?>
                 </div>
-                <ul class="services__list row">
+                <ul class="services__list">
 					<?php
 					$args  = array(
 						'numberposts'      => 0,
@@ -40,7 +40,7 @@ Template Name: Front page
 					foreach ( $posts as $post ) {
 						setup_postdata( $post );
 						?>
-                        <li class="services__item item col-sm-12 col-md-4">
+                        <li class="services__item item">
                             <a href="<?php the_permalink() ?>" class="item__link">
                                 <div class="item__wrapper">
                                     <div class="item__circle"></div>
@@ -68,7 +68,7 @@ Template Name: Front page
                 <div class="started__desc block__desc">
 					<?php echo get_field( 'block3_description' ) ?>
                 </div>
-                <ul class="started__list row">
+                <ul class="started__list">
 					<?php
 					$args  = array(
 						'category_name'    => 'get-started',
@@ -81,7 +81,7 @@ Template Name: Front page
 					foreach ( $posts as $post ) {
 						setup_postdata( $post );
 						?>
-                        <li class="started__item col-sm-12 col-md-4">
+                        <li class="started__item">
                             <div class="started__item-wrapper">
 								<?php
 								if ( has_post_thumbnail() ) {
@@ -162,7 +162,7 @@ Template Name: Front page
 					foreach ( $posts as $post ) {
 						setup_postdata( $post );
 						?>
-                        <li class="news__item col-sm-12 col-md-4">
+                        <li class="news__item">
                             <div class="news__item-wrapper">
                                 <div class="news__wrapper">
 									<?php
@@ -197,46 +197,46 @@ Template Name: Front page
         </section>
         <section class="contacts">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-xs-12 contacts__form">
+                <div class="contacts__wrapper">
+                    <div class="contacts__form">
                         <h2 class="contacts__form-title"><?php echo get_field( 'left_title' ) ?></h2>
                         <div class="contacts__form-desc"><?php echo get_field( 'left_description' ) ?></div>
 						<?php echo do_shortcode( '[contact-form-7 id="108" title="Contact Form for Main Page"]' ); ?>
                     </div>
-                    <div class="col-md-6 col-xs-12 contacts__projects">
+                    <div class="contacts__projects">
                         <h2 class="contacts__projects-title"><?php echo get_field( 'right_title' ) ?></h2>
                         <div class="contacts__projects-desc"><?php echo get_field( 'right_description' ) ?></div>
                         <div>
-                            <ul class="contacts__projects-list row">
-                                <li class="contacts__projects-item col-3">
+                            <ul class="contacts__projects-list">
+                                <li class="contacts__projects-item">
                                     <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
                                          alt="#">
                                 </li>
-                                <li class="contacts__projects-item col-3">
+                                <li class="contacts__projects-item">
                                     <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
                                          alt="#">
                                 </li>
-                                <li class="contacts__projects-item col-3">
+                                <li class="contacts__projects-item">
                                     <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
                                          alt="#">
                                 </li>
-                                <li class="contacts__projects-item col-3">
+                                <li class="contacts__projects-item">
                                     <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
                                          alt="#">
                                 </li>
-                                <li class="contacts__projects-item col-3">
+                                <li class="contacts__projects-item">
                                     <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
                                          alt="#">
                                 </li>
-                                <li class="contacts__projects-item col-3">
+                                <li class="contacts__projects-item">
                                     <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
                                          alt="#">
                                 </li>
-                                <li class="contacts__projects-item col-3">
+                                <li class="contacts__projects-item">
                                     <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
                                          alt="#">
                                 </li>
-                                <li class="contacts__projects-item col-3">
+                                <li class="contacts__projects-item">
                                     <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
                                          alt="#">
                                 </li>

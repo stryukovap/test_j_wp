@@ -1,7 +1,7 @@
 </main>
 <footer class="footer">
     <div class="container">
-        <div class="footer__wrapper row align-items-center justify-content-between">
+        <div class="footer__wrapper">
             <div class="footer__copy">
                 Copyright 2017. Storm Guard. All Rights Reserved. Website Produced by: <a href="#">Inverse Paradox</a>
             </div>

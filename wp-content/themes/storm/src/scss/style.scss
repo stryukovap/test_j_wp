@@ -3,7 +3,6 @@
 	Author: Andrey Stryukov
 */
 @import "_normalize.scss";
-@import "bootstrap-grid.min.css";
 @import "fonts.css";
 @import "post.scss";
 @import "error404.scss";
@@ -11,6 +10,16 @@
 /* colors */
 $main-color: #ffdd00;
 $second-color: #db302c;
+
+* {
+  outline: 1px solid green;
+}
+
+.container {
+  max-width: 1230px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
 
 body {
   color: #000000;
@@ -48,6 +57,9 @@ h1, h2 {
 
   &__top {
     min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     & a {
       font-family: Helvetica, sans-serif;
@@ -69,13 +81,16 @@ h1, h2 {
         display: block;
         position: absolute;
         top: 0;
-        right: 0;
+        right: -15px;
       }
     }
 
     &-menu {
       &-list {
         @include list;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
 
         & li {
           position: relative;
@@ -136,8 +151,17 @@ h1, h2 {
       z-index: 5;
     }
 
+    &-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
     &-list {
       @include list;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
 
       & li {
         position: relative;
@@ -269,6 +293,10 @@ h1, h2 {
   &__desc {
     background-color: rgba(0, 0, 0, 0.71);
     padding: 26px;
+    width: 500px;
+    @media(max-width: 960px) {
+      width: auto;
+    }
 
     &-text {
       margin-left: 10px;
@@ -339,15 +367,25 @@ h1, h2 {
     padding: 30px 0 30px;
     color: #000000;
 
+    &-inner {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      @media (max-width: 960px) {
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+
     &-wrapper {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      padding-left: 65px;
+      padding-left: 63px;
+      margin-left: 45px;
       background: url("assets/img/map-marker.png") left center no-repeat;
       @media(max-width: 960px) {
-        background: none;
-        padding: 0 15px;
+        margin-left: 0;
       }
     }
 
@@ -355,6 +393,7 @@ h1, h2 {
       font-family: EurostileLTStd-Demi, sans-serif;
       font-size: 38px;
       font-weight: 400;
+      color: inherit;
     }
 
     &-desc {
@@ -392,6 +431,7 @@ h1, h2 {
       font-weight: 700;
       padding: 20px 40px 17px 17px;
       margin-right: 10px;
+      box-sizing: border-box;
       @media(max-width: 960px) {
         margin-right: 0;
         width: 100%;
@@ -457,6 +497,10 @@ h1, h2 {
 
   &__list {
     @include list;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
 
   &__link {
@@ -482,6 +526,19 @@ h1, h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: calc(100% / 3);
+    box-sizing: border-box;
+
+    &:not(:nth-child(3n)) {
+      padding-right: 15px;
+      @media(max-width: 960px) {
+        padding: 0;
+      }
+    }
+
+    @media(max-width: 960px) {
+      width: 100%;
+    }
   }
 
   & .item {
@@ -535,16 +592,35 @@ h1, h2 {
 
   &__list {
     @include list;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
 
   &__item {
     display: flex;
     flex-direction: column;
+    width: calc(96% / 3);
+    box-sizing: border-box;
     margin-top: 25px;
+
+    &:nth-child(2n) {
+      margin-right: 2%;
+      margin-left: 2%;
+      @media (max-width: 960px) {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+
+    @media(max-width: 960px) {
+      width: 100%;
+    }
 
     &-wrapper {
       & img {
-        max-width: 100%;
+        width: 100%;
         display: block;
       }
     }
@@ -651,10 +727,30 @@ h1, h2 {
 
   &__list {
     @include list;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
 
   &__item {
+    width: calc(96% / 3);
+    box-sizing: border-box;
     margin-top: 30px;
+
+    &:nth-child(2n) {
+      margin-right: 2%;
+      margin-left: 2%;
+      @media (max-width: 960px) {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+
+    @media(max-width: 960px) {
+      width: 100%;
+    }
+
 
     &-wrapper {
       border: 1px solid #e1e1e1;
@@ -667,7 +763,6 @@ h1, h2 {
     & img {
       display: block;
       width: 100%;
-      height: auto;
     }
   }
 
@@ -774,6 +869,13 @@ h1, h2 {
   padding-top: 35px;
   padding-bottom: 35px;
 
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
   &__link {
     color: $second-color;
     font-family: Helvetica, sans-serif;
@@ -792,6 +894,11 @@ h1, h2 {
   }
 
   &__form {
+    width: calc((1230 - 36) / 1230 * 50%);
+    @media(max-width: 960px) {
+      width: 100%;
+    }
+
     & input:not([type=submit]), & select, & textarea {
       width: 100%;
       margin-bottom: 24px;
@@ -801,6 +908,7 @@ h1, h2 {
       font-weight: 400;
       line-height: 24px;
       color: #000;
+      box-sizing: border-box;
 
       &::placeholder {
         color: #ababab;
@@ -830,6 +938,7 @@ h1, h2 {
       &:hover {
         color: #000;
         background-color: $main-color;
+        cursor: pointer;
       }
     }
 
@@ -855,6 +964,11 @@ h1, h2 {
   }
 
   &__projects {
+    width: calc((1230 - 36) / 1230 * 50%);
+    @media(max-width: 960px) {
+      width: 100%;
+      margin-top: 30px;
+    }
 
     &-title {
       color: #ffffff;
@@ -878,10 +992,20 @@ h1, h2 {
 
     &-list {
       @include list;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-wrap: wrap;
     }
 
     &-item {
-      padding: 10px 10px;
+      width: 22.42%;
+      margin-right: 3.43%;
+      margin-bottom: 3.43%;
+
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
 
       & img {
         width: 100%;
@@ -931,6 +1055,13 @@ h1, h2 {
 
   &__wrapper {
     min-height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media(max-width: 960px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   & a {
@@ -939,6 +1070,10 @@ h1, h2 {
     font-size: 12px;
     font-weight: 400;
     line-height: 34px;
+
+    &:hover {
+      color: $second-color;
+    }
   }
 
   &__copy {
@@ -951,6 +1086,13 @@ h1, h2 {
 
   &__menu-list {
     @include list;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    @media(max-width: 960px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
     & li {
       margin: 0 5px;
