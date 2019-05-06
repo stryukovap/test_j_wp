@@ -7,12 +7,11 @@
 			<div class="container">
 				<?php get_template_part( 'template-parts/breadcrumbs' ) ?>
                 <h1 class="page-title">Search results for: <?php echo get_search_query(); ?></h1>
-                <div class="row">
-                    <div class="col-sm-12 col-md-8">
-                        <ul class="posts__list row">
+                <div class="posts__wrapper">
+                    <ul class="posts__list">
 							<?php if ( have_posts() ) : while ( have_posts() ) :
 								the_post(); ?>
-                                <li class="news__item col-sm-12 col-md-6">
+                                <li class="posts__item">
                                     <div class="news__item-wrapper">
                                         <div class="news__wrapper">
 											<?php
@@ -40,8 +39,7 @@
                                 </li>
 							<?php endwhile; ?>
                         </ul>
-                    </div>
-                    <div class="col-sm-12 col-md-4">
+                    <div class="posts__sidebar">
 						<?php get_sidebar( 'sidebar-search' ) ?>
                     </div>
                 </div>

@@ -14,15 +14,14 @@ get_header();
 				<?php if ( have_posts() ):
 					while ( have_posts() ): the_post(); ?>
                         <article class="content">
-                            <div class="row">
-                                <div class="content__image col-sm-12 col-md-6">
+                            <div class="content__image">
 									<?php
 									if ( has_post_thumbnail() ) {
 										the_post_thumbnail();
 									}
 									?>
                                 </div>
-                                <div class="content__wrapper col-sm-12 col-md-6">
+                            <div class="content__inner">
                                     <h2 class="content__title">
 										<?php the_title() ?>
                                     </h2>
@@ -32,7 +31,6 @@ get_header();
                                            class="news__more">Read More</a>
                                     </div>
                                 </div>
-                            </div>
                         </article>
 					<?php endwhile; ?>
 				<?php else: ?>

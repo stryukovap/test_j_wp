@@ -7,13 +7,12 @@ get_header();
     </div>
     <div class="container">
 		<?php get_template_part( 'template-parts/breadcrumbs' ) ?>
-        <article class="content">
-            <div class="row">
+        <article class="gallery">
 				<?php the_post(); ?>
-                <h1 class="content__title col-12">
+            <h1 class="gallery__title">
 					<?php the_title() ?>
                 </h1>
-                <div class="content__image col-12">
+            <div class="gallery__image">
 					<?php
 					if ( has_post_thumbnail() ) {
 						$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
@@ -23,12 +22,11 @@ get_header();
 					}
 					?>
                 </div>
-                <div class="content__wrapper col-12">
-                    <div class="content__text">
+            <div class="gallery__inner">
+                <div class="gallery__text">
 						<?php the_content(); ?>
                     </div>
                 </div>
-            </div>
         </article>
     </div>
 	<?php get_template_part( 'template-parts/find_block' ) ?>

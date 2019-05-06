@@ -12,29 +12,24 @@ get_header();
 				the_archive_title( '<h1 class="page-title">', '</h1>' );
 				?>
                 <section class="content">
-                    <div class="row">
+                    <div class="content__wrapper">
 						<?php if ( have_posts() ):
 							while ( have_posts() ): the_post(); ?>
-                                <article class="content__item col-sm-12 col-md-6">
-                                    <div class="content__image">
+                                <article class="content__item gallery">
+                                    <div class="gallery__image">
 										<?php
 										if ( has_post_thumbnail() ) {
 											$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 											echo '<a href="' . $large_image_url[0] . '" title="' . the_title_attribute( 'echo=0' ) . '" >';
-											the_post_thumbnail( 'large' );
+											the_post_thumbnail( 'storm-gallery' );
 											echo '</a>';
 										}
 										?>
                                     </div>
-                                    <h2 class="content__title">
+                                    <h2 class="gallery__title">
                                         <a href="<?php the_permalink() ?>"
                                            class="news__more"><?php the_title() ?></a>
                                     </h2>
-                                    <div class="content__wrapper">
-                                        <div class="content__text">
-											<?php the_content(); ?>
-                                        </div>
-                                    </div>
                                 </article>
 							<?php endwhile; ?>
 						<?php else: ?>

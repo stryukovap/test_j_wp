@@ -9,16 +9,15 @@ get_header();
         <div class="container">
 	        <?php get_template_part( 'template-parts/breadcrumbs' ) ?>
             <article class="content">
-                <div class="row">
 					<?php the_post(); ?>
-                    <div class="content__image col-sm-12 col-md-6">
+                <div class="content__image">
 						<?php
 						if ( has_post_thumbnail() ) {
 							the_post_thumbnail();
 						}
 						?>
                     </div>
-                    <div class="content__wrapper col-sm-12 col-md-6">
+                <div class="content__inner">
                         <h1 class="content__title">
 							<?php the_title() ?>
                         </h1>
@@ -26,7 +25,6 @@ get_header();
 							<?php the_content(); ?>
                         </div>
                     </div>
-                </div>
             </article>
         </div>
 	    <?php get_template_part( 'template-parts/services_block' ) ?>

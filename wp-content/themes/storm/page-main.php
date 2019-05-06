@@ -208,38 +208,31 @@ Template Name: Front page
                         <div class="contacts__projects-desc"><?php echo get_field( 'right_description' ) ?></div>
                         <div>
                             <ul class="contacts__projects-list">
-                                <li class="contacts__projects-item">
-                                    <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
-                                         alt="#">
-                                </li>
-                                <li class="contacts__projects-item">
-                                    <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
-                                         alt="#">
-                                </li>
-                                <li class="contacts__projects-item">
-                                    <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
-                                         alt="#">
-                                </li>
-                                <li class="contacts__projects-item">
-                                    <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
-                                         alt="#">
-                                </li>
-                                <li class="contacts__projects-item">
-                                    <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
-                                         alt="#">
-                                </li>
-                                <li class="contacts__projects-item">
-                                    <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
-                                         alt="#">
-                                </li>
-                                <li class="contacts__projects-item">
-                                    <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
-                                         alt="#">
-                                </li>
-                                <li class="contacts__projects-item">
-                                    <img src="<?php echo get_template_directory_uri() . '/assets/img/bigstock-Luxury-One-Level-House-Exterio-143103731.png' ?>"
-                                         alt="#">
-                                </li>
+	                            <?php
+	                            $args  = array(
+		                            'numberposts'      => 8,
+		                            'order'            => 'DESC',
+		                            'post_type'        => 'gallery',
+		                            'orderby'          => 'date',
+		                            'suppress_filters' => 'true'
+	                            );
+	                            $posts = get_posts( $args );
+	                            foreach ( $posts as $post ) {
+		                            setup_postdata( $post );
+		                            ?>
+                                    <li class="contacts__projects-item">
+			                            <?php
+			                            if ( has_post_thumbnail() ) {
+				                            $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+				                            echo '<a href="' . $large_image_url[0] . '" title="' . the_title_attribute( 'echo=0' ) . '" >';
+				                            the_post_thumbnail( 'storm-mini' );
+				                            echo '</a>';
+			                            }
+			                            ?>
+                                    </li>
+		                            <?php
+	                            }
+	                            wp_reset_postdata(); ?>
                             </ul>
                         </div>
                         <div class="contacts__projects-wrapper">

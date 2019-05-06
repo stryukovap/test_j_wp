@@ -3,9 +3,9 @@
 	Author: Andrey Stryukov
 */
 @import "_normalize.scss";
-@import "fonts.css";
-@import "post.scss";
-@import "error404.scss";
+@import "_fonts.scss";
+@import "_post.scss";
+@import "_error404.scss";
 
 /* colors */
 $main-color: #ffdd00;
@@ -165,6 +165,7 @@ h1, h2 {
 
       & li {
         position: relative;
+        text-align: center;
       }
 
       & .current_page_item a {
@@ -344,7 +345,7 @@ h1, h2 {
   padding-bottom: 15px;
 
   & a {
-    padding: 0 5px;
+    padding: 0 5px 0 0;
     font-family: Helvetica, sans-serif;
     font-size: 14px;
     font-weight: normal;
@@ -986,7 +987,7 @@ h1, h2 {
       margin: 24px 0 30px;
 
       &--post {
-        margin: 20px 0 0;
+        margin: 20px 0;
       }
     }
 
@@ -1142,4 +1143,8 @@ h1, h2 {
       text-decoration: underline;
     }
   }
+}
+
+.page-full {
+  margin-bottom: 30px;
 }

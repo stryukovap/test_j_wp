@@ -3,7 +3,8 @@
     <div class="container">
         <div class="footer__wrapper">
             <div class="footer__copy">
-                Copyright 2017. Storm Guard. All Rights Reserved. Website Produced by: <a href="#">Inverse Paradox</a>
+                Copyright <?php echo( date( "Y" ) ); ?>. Storm Guard. All Rights Reserved. Website Produced by: <a
+                        href="#">Inverse Paradox</a>
             </div>
 			<?php
 			wp_nav_menu( [
